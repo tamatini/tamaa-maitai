@@ -1,0 +1,19 @@
+{
+  "name": "tamaa-maitai-backend",
+  "version": "1.0.0",
+  "description": "This is the backend for Tama'a Maitai web application",
+  "main": "server.js",
+  "scripts": {
+    "dev": "concurrently \"nodemon server \" \" cd ../tamaa-maitai && npm run start \"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "TEAHUI Jeffrey",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^6.3.0",
+    "express": "^4.17.1",
+    "mongoose": "^6.0.11",
+    "nodemon": "^2.0.13"
+  }
+}
