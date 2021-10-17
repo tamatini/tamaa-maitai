@@ -1,24 +1,15 @@
 // Imports
 const Food = require('../Models/FoodModel');
-
-// Functions
-foodSpec = (arg) => {
-  const {_id, name, prepTime, ingredients, steps} = arg;
-  return {
-    id: _id,
-    name: name,
-    prepTime: prepTime,
-    ingredient: ingredients,
-    steps: steps
-  }
-};
+const foodSpec = require('../../Helpers/functions').foodSpec;
 
 // Methods
 // Return an Array of recipes
 // GET /api/v1/foods
 getAllFood = async (req, res) => {
   try {
-    const foods = await Food.find();
+    const author = req.query.authorId
+    let foods = await Food.find();
+    if (author) foods = await Food.find({authorId: author});
     const food = foods.map(dish => {
       return foodSpec(dish)
     });

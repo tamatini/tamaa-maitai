@@ -2,7 +2,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-// Food Schema * will probably need a redesign if can't handle image integration
+// Food Schema * will probably need a redesign if can't handle image integration and user identification
 const foodSchema = new Schema({
   name: {
     type: String,
@@ -17,6 +17,10 @@ const foodSchema = new Schema({
     required: true
   },
   steps: {
+    type: String,
+    required: true
+  },
+  authorId: {
     type: String,
     required: true
   }
